@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300&family=Roboto:wght@300;400;500;700&display=swap');
+
+*,::after,::before {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/*--------- HEADER ---------*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    overflow-y: visible;
+    position: fixed;
+}
+
+header input {
+    display: none;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 1.3rem;
+    left: 3rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.hamburger-menu .hamburger {
+    height: 5px;
+    width: 30px;
+    background-color: #000000;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.hamburger-menu .hamburger:nth-child(1) {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    height: 5px;
+    width: 30px;
+    background-color: #000000;
+    border-radius: 5px;
+}
+
+.hamburger-menu .hamburger:nth-child(3) {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: 5px;
+    width: 30px;
+    background-color: #000000;
+    border-radius: 5px;
+}
+
+header input:checked ~ .hamburger-menu .hamburger:nth-child(2) {
+    transform: scale(0);
+}
+
+header input:checked + .hamburger-menu .hamburger:nth-child(1) {
+    transform: rotate(135deg);
+    top: 0;
+}
+
+header input:checked + .hamburger-menu .hamburger:nth-child(3) {
+    transform: rotate(-135deg);
+    top: 0;
+}
+
+header .side-bar {
+    position: relative;
+    top: 0;
+    left: 0; /**/
+    margin: 3rem 2rem;
+    transition: all 0.4s;
+}
+
+/*header input:checked ~ .side-bar {
+    left: 0;
+}*/
